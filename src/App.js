@@ -5,6 +5,11 @@ import {
   Button, FormText, FormFeedback,
 } from 'reactstrap';
 import './App.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faEnvelope, faKey } from '@fortawesome/fontawesome-free-solid';
+
+library.add(faEnvelope, faKey)
 
 class App extends Component {
   constructor(props) {
@@ -52,7 +57,9 @@ class App extends Component {
         <Form className="form" onSubmit={ (e) => this.submitForm(e) }>
           <Col>
             <FormGroup>
-              <Label>Username</Label>
+              <Label>
+                <FontAwesomeIcon icon="envelope" className="sign-in-envelope" /> Username
+              </Label>
               <Input
                 type="email"
                 name="email"
@@ -77,7 +84,9 @@ class App extends Component {
           </Col>
           <Col>
             <FormGroup>
-              <Label for="examplePassword">Password</Label>
+              <Label for="examplePassword">
+                <FontAwesomeIcon icon="key" className="sign-in-key" /> Password
+              </Label>
               <Input
                 type="password"
                 name="password"
